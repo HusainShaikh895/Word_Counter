@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Count</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</head>
+<body>
+	<center>
+	<div id='count_header' class='bg-dark text-white'>
+	<h1>Counts page</h1>
+</div>
+	<hr class='black dotted'>
+	<h4 class='red'> Total <mark>{{length}}</mark> Words </h4>
+	<h3><mark>{{dict_length}}</mark> Unique Words </h3>
+	<table class='table-striped table-dark table-bordered'>
+		
+		<tr><td>WORD</td><td>COUNT</td></tr>
+	{% for word, total in word_dict.items %}
+		<tr class='center'>
+			<td>{{ word }}</td><td>{{ total }}</td>
+		</tr>
+
+	{% endfor %}
+	</table>
+
+	<h1><a href="{% url 'about' %}"><input type=button class='btn btn-dark hoverable' value=Reset></a></h1>
+</center>
+</body>
+</html>
